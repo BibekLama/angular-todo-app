@@ -1,0 +1,19 @@
+.add-todo{
+    width: 50%;
+    background: #ddd;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    padding:15px;
+    box-sizing: border-box;
+}
+
+.title{
+    flex-grow: 1;
+    padding:5px;
+    margin-right:15px;
+}
+
+.submit{
+    cursor: pointer;
+}

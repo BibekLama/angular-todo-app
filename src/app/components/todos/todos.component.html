@@ -1,0 +1,16 @@
+<div>
+    <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+    <app-todo-item 
+        *ngFor="let todo of pageTodos" 
+        [todo]="todo"
+        (deleteTodo)="deleteTodo($event)"
+    >
+    </app-todo-item>
+    <div class="pagination">
+        <div class="prev" (click)="gotoPrevious()"><<</div>
+        <div *ngFor="let page of totalPages; let i = index"  class="pageLinks" >
+            <span *ngIf="i >= currentPage && i <= (currentPage + 10) && currentPage <= totalPages.length" class="pageLink" (click)="gotoPage(i+1)" [ngClass]="setClasses(i+1)">{{ i }}</span>
+        </div>
+        <div class="next" (click)="gotoNext()">>></div>
+    </div>
+</div>
