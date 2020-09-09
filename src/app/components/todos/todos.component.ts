@@ -63,18 +63,7 @@ export class TodosComponent implements OnInit {
   }
 
   gotoPage(i:number){
-    console.log(i)
     this.currentPage = i;
-    this.getPageTodos();
-  }
-
-  gotoNext(){
-    this.currentPage = this.currentPage + 1;
-    this.getPageTodos();
-  }
-
-  gotoPrevious(){
-    this.currentPage = this.currentPage - 1;
     this.getPageTodos();
   }
   
@@ -83,6 +72,24 @@ export class TodosComponent implements OnInit {
     let classes = {
       i:true,
       'active': this.currentPage == i
+    }
+    return classes;
+  }
+
+  setNextClasses(i: number) {
+    console.log(this.totalPages[-1])
+    let classes = {
+      i:true,
+      'hide':  i > this.totalPages[this.totalPages.length - 1]
+    }
+    return classes;
+  }
+
+  setPrevClasses(i: number) {
+    console.log()
+    let classes = {
+      i:true,
+      'hide':  i < this.totalPages[0]
     }
     return classes;
   }

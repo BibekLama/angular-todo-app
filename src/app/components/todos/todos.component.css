@@ -32,3 +32,7 @@
 .pageLink:hover, .prev:hover, .next:hover, .active{
     background: coral;
 }
+
+.hide {
+    display: none;
+}
